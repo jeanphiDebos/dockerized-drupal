@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  apache:
+    image: httpd:${APACHE_VERSION}
+    links:
+      - php
+    ports:
+      - ${APACHE_PORT}:80
+    volumes:
+      - ./docker/apache/all/conf/httpd.conf:/usr/local/apache2/conf/httpd.conf
+      - ./docker/apache/${APACHE_VERSION}/conf/httpd.conf:/usr/local/apache2/conf/httpd.d/httpd.conf
+      - .:/var/www/html
+
+  php:
+    image: drupaldocker/php:${PHP_VERSION}
+    volumes:
+      - .:/var/www/html

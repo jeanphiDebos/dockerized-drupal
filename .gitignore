@@ -1,0 +1,5 @@
+# Files moved for deletion
+/.trash/
+
+# Composer vendors.
+/vendor/
