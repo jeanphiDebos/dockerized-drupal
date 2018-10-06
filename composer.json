@@ -1,0 +1,14 @@
+{
+    "name": "neimheadh/dockerized-drupal",
+    "description": "Composer template drupal projects, including docker/docker-compose environment. Installation via \"composer create-project neimheadh/dockerized-drupal\"",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mathieu Wambre",
+            "email": "mathieu@wambre.fr"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
