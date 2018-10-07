@@ -1,5 +1,8 @@
 version: '3'
 
+volumes:
+  database:
+
 services:
   apache:
     image: httpd:${APACHE_VERSION}
@@ -12,17 +15,42 @@ services:
       - ./docker/apache/${APACHE_VERSION}/conf/httpd.conf:/usr/local/apache2/conf/httpd.d/httpd.conf
       - .:/var/www/html
 
+  mysql:
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_USER: ${MYSQL_USER}
+    image: mysql:${MYSQL_VERSION}
+    volumes:
+      - database:/var/lib/mysql
+
   php:
     build:
       context: docker/php
       args:
         PHP_VERSION: ${PHP_VERSION}
-    entrypoint: docker-php-composer-entrypoint php-fpm
+    entrypoint: docker-php-drupal-entrypoint php-fpm
     environment:
+      DRUPAL_DB_PREFIX: ${DRUPAL_DB_PREFIX}
+      DRUPAL_LANGCODE: ${DRUPAL_LANGCODE}
+      DRUPAL_PASSWORD: ${DRUPAL_PASSWORD}
+      DRUPAL_PROFILE: ${DRUPAL_PROFILE}
+      DRUPAL_SITE_MAIL: ${DRUPAL_SITE_MAIL}
+      DRUPAL_SITE_NAME: ${DRUPAL_SITE_NAME}
+      DRUPAL_USERMAIL: ${DRUPAL_USERMAIL}
+      DRUPAL_USERNAME: ${DRUPAL_USERNAME}
+      DRUPAL_VERSION: ${DRUPAL_VERSION}
       HOME: /var/www/html
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_USER: ${MYSQL_USER}
       PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/var/www/html/vendor/bin
+    links:
+      - mysql
     user: "${UID}:${GID}"
     volumes:
-      - ./docker/php/bin/docker-php-composer-entrypoint.sh:/usr/local/bin/docker-php-composer-entrypoint
+      - ./docker/php/bin/docker-php-drupal-entrypoint.sh:/usr/local/bin/docker-php-drupal-entrypoint
       - ./docker/php/conf/composer.ini:/usr/local/etc/php/conf.d/xx_composer.ini
       - .:/var/www/html
