@@ -1,5 +1,9 @@
 # Files moved for deletion
 /.trash/
 
+# Docker container home files
+/.composer/
+/.ash_history
+
 # Composer vendors.
 /vendor/

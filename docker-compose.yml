@@ -13,6 +13,13 @@ services:
       - .:/var/www/html
 
   php:
+    entrypoint: docker-php-composer-entrypoint php-fpm
+    environment:
+      HOME: /var/www/html
+      PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/var/www/html/vendor/bin
     image: drupaldocker/php:${PHP_VERSION}
+    user: "${UID}:${GID}"
     volumes:
+      - ./docker/php/bin/docker-php-composer-entrypoint.sh:/usr/local/bin/docker-php-composer-entrypoint
+      - ./docker/php/conf/composer.ini:/usr/local/etc/php/conf.d/xx_composer.ini
       - .:/var/www/html
