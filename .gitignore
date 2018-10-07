@@ -4,6 +4,12 @@
 # Docker container home files
 /.composer/
 /.ash_history
+/.drush/
+/.console/
 
 # Composer vendors.
 /vendor/
+
+# Drupal files
+/web/core
+/web/modules/contrib/*
