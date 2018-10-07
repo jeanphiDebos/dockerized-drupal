@@ -39,10 +39,10 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "mkdir -p web/modules web/profiles web/themes"
+            "mkdir -p web/modules web/profiles web/themes web/sites/default/files"
         ],
         "post-update-cmd": [
-            "mkdir -p web/modules web/profiles web/themes"
+            "mkdir -p web/modules web/profiles web/themes web/sites/default/files"
         ]
     },
     "extra": {
