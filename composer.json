@@ -12,7 +12,7 @@
     "scripts": {
       "post-create-project-cmd": [
         "php -r \"rename('composer.dist.json', 'composer.json');\"",
-        "docker-composer run --rm php composer install",
+        "docker-compose run --rm php composer install",
         "docker-compose up -d"
       ]
     }
