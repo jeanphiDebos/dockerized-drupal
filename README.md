@@ -20,7 +20,7 @@ composer create-project neimheadh/dockerized-drupal my_project
 
 > Node: If you want to install a specific version of drupal, you can use the command
 `composer create-project neimheadh/dockerized-drupal:{VERSION}`. Check the
-[release section](https://github.com/neimheadh/dockerized-drupal/blob/master/releases) to know what versions are available.
+release section to know what versions are available.
 
 You can now start your Drupal using the following command :
 
