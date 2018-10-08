@@ -1,6 +1,9 @@
 # Files moved for deletion
 /.trash/
 
+# Environment file
+/.env
+
 # Docker container home files
 /.composer/
 /.ash_history

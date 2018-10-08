@@ -11,7 +11,8 @@
     ],
     "scripts": {
       "post-create-project-cmd": [
-        "php -r \"rename('composer.dist.json', 'composer.json');\""
+        "scripts/generate-env-file.php",
+        "scripts/clean-workspace.php"
       ]
     }
 }
