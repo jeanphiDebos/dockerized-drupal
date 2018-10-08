@@ -1,12 +1,13 @@
 #!/bin/php
 <?php
+echo getenv('UID');
 $configuration = [
   'Environment configuration' => [
-    'UID' => getenv('UID'),
-    'GID' => getenv('GID'),
+    'UID' => getmyuid(),
+    'GID' => getmygid(),
   ],
   'Apache configuration' => [
-    'APACHE_PORT' => 18080,
+    'APACHE_PORT' => 8080,
     'APACHE_VERSION' => '2.4'
   ],
   'MySQL configuration' => [

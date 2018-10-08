@@ -18,24 +18,3 @@
 /web/modules/contrib/*
 /web/sites/default/settings.php
 /web/sites/default/files
-
-# DrupalComposer\\DrupalScaffold\\Plugin::scaffold -- to delete
-/web/sites/default/default.services.yml
-/web/sites/default/default.settings.php
-/web/sites/development.services.yml
-/web/sites/example.settings.local.php
-/web/sites/example.sites.php
-/web/.csslintrc
-/web/.editorconfig
-/web/.eslintignore
-/web/.eslintrc.json
-/web/.gitattributes
-/web/.ht.router.php
-/web/.htaccess
-/web/autoload.php
-/web/index.php
-/web/robots.txt
-/web/update.php
-/web/web.config
-/.editorconfig
-/.gitattributes
