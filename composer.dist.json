@@ -40,11 +40,9 @@
     "scripts": {
         "post-install-cmd": [
             "mkdir -p web/modules web/profiles web/themes web/sites/default/files",
-            "DrupalComposer\\DrupalScaffold\\Plugin::scaffold"
+            "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
+            "chown ${UID}:${GID} -R ."
         ],
-        "post-update-cmd": [
-            "mkdir -p web/modules web/profiles web/themes web/sites/default/files"
-        ]
     },
     "extra": {
         "patchLevel": {

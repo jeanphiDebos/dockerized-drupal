@@ -41,12 +41,14 @@ services:
       DRUPAL_USERMAIL: ${DRUPAL_USERMAIL}
       DRUPAL_USERNAME: ${DRUPAL_USERNAME}
       DRUPAL_VERSION: ${DRUPAL_VERSION}
+      GID: ${GID}
       HOME: /var/www/html
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
       MYSQL_USER: ${MYSQL_USER}
       PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/var/www/html/vendor/bin
+      UID: ${UID}
     links:
       - mysql
     user: "${UID}:${GID}"
