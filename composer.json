@@ -11,8 +11,8 @@
     ],
     "scripts": {
       "post-create-project-cmd": [
-        "scripts/generate-env-file.php",
-        "scripts/clean-workspace.php"
+        "php scripts/generate-env-file.php",
+        "php scripts/clean-workspace.php"
       ]
     }
 }
