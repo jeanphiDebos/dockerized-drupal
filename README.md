@@ -5,7 +5,7 @@ development using [Composer](https://getcomposer.org/) & [Docker](https://www.do
 
 ## Usage
 
-Fist you need to [install composer](https://getcomposer.org/download/), [docker](https://docs.docker.com/install/)
+First you need to [install composer](https://getcomposer.org/download/), [docker](https://docs.docker.com/install/)
 and [docker-compose](https://docs.docker.com/compose/install/).
 
 > Note: The instructions below refer to the [global composer installation](https://getcomposer.org/doc/00-intro.md#globally).
