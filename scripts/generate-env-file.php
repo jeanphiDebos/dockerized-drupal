@@ -1,9 +1,9 @@
 #!/bin/php
 <?php
-const PARAMS = [
+$configuration = [
   'Environment configuration' => [
-    'UID' => 1000,
-    'GID' => 1000,
+    'UID' => getenv('UID'),
+    'GID' => getenv('GID'),
   ],
   'Apache configuration' => [
     'APACHE_PORT' => 18080,
@@ -21,20 +21,19 @@ const PARAMS = [
   ],
   'Drupal configuration' => [
     'DRUPAL_DB_PREFIX' => '',
-    'DRUPAL_LANGCODE' => 'en',
+    'DRUPAL_LANGCODE' => substr(getenv('LANG'), 0, 2),
     'DRUPAL_PASSWORD' => 'admin',
     'DRUPAL_PROFILE' => 'standard',
     'DRUPAL_SITE_MAIL' => 'admin@example.com',
     'DRUPAL_SITE_NAME' => 'Drupal8',
     'DRUPAL_USERMAIL' => 'admin@example.com',
     'DRUPAL_USERNAME' => 'admin',
-    'DRUPAL_VERSION' => '8.6.1',
   ],
 ];
 
 $fp = fopen('.env', 'w');
 
-foreach (PARAMS as $section => $params) {
+foreach ($configuration as $section => $params) {
   fwrite($fp, "# $section\n");
 
   foreach($params as $key => $param) {
